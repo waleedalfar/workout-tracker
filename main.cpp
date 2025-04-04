@@ -42,8 +42,8 @@ void listExercises()
         defaultExercises(exercisesFile);
     }
 
-    exercisesFile.seekg(0, ios::beg);
-
+    exercisesFile.seekg(0, ios::beg); // move pointer to the begining of the file to read
+    cout << "These are your current exercises:" << endl;
     if (exercisesFile.is_open())
     {
         while (getline(exercisesFile, line))

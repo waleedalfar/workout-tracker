@@ -2,3 +2,5 @@ Bench Press
 Squat
 Deadlift
 P
+Pullups
+Dumbell Curl
