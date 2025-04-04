@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/homebrew/include",
+                "/opt/homebrew/Cellar/qt/6.8.2_1/lib/QtWidgets.framework/Versions/A/Headers"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "intelliSenseMode": "macos-gcc-arm64",
+            "compilerPath": "/opt/homebrew/bin/g++-14"
+        }
+    ],
+    "version": 4
+}
