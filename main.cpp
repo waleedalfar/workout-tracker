@@ -15,13 +15,13 @@ int quit();
 
 void addNewExercise()
 {
-    fstream exercisesFile("/Users/waleedalfar/Desktop/workouttracker/exercises.txt", ios::in | ios::out | ios::app);
+    fstream exercisesFile("/Users/waleedalfar/Desktop/workouttracker/exercises.txt", ios::in | ios::out | ios::app); // ios: app is append mode meaning that whatever is written to the file will be written to the end of the file
     listExercises();
     cin.ignore();
     cout << "Enter new exercise: ";
     string userInput;
     getline(cin, userInput);
-    exercisesFile << userInput << endl;
+    exercisesFile << userInput << endl; // send userinput into the file
 }
 
 void defaultExercises(fstream &exercisesFile)
@@ -35,11 +35,10 @@ void listExercises()
 {
     string line;
     fstream exercisesFile("/Users/waleedalfar/Desktop/workouttracker/exercises.txt", ios::in | ios::out | ios::app);
-    // ifstream exercisesFile("/Users/waleedalfar/Desktop/exercises.txt");
 
     if (exercisesFile.tellg() == 0) // If the file pointer is at the start (empty file)
     {
-        defaultExercises(exercisesFile);
+        defaultExercises(exercisesFile); // load default exercises into the file
     }
 
     exercisesFile.seekg(0, ios::beg); // move pointer to the begining of the file to read
@@ -78,7 +77,8 @@ void newWorkout()
     if (newFile.is_open())                // while that bitch is open
     {
         cout << newWorkoutFileName + " was opened" << endl;
-        cout << "Enter your exercises and reps: ";
+        cout << "Choose exercise: ";
+        cout << "Enter reps for ";
         string userInput;
         getline(cin, userInput);
         newFile << userInput;
