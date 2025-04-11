@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -88,7 +89,51 @@ void newWorkout()
 
 void editPreviousWorkout()
 {
-    cout << "two";
+    ifstream file("workout0.txt");
+    if (!file)
+    {
+        cerr << "Error opening file for reading!" << endl;
+        return;
+    }
+
+    vector<string> lines;
+    string line;
+
+    // read file into vector of strings
+
+    while (getline(file, line))
+    {
+        lines.push_back(line);
+    }
+    file.close();
+
+    // ask user line number to edit
+
+    int lineNumber;
+
+    cout << "Enter the line number you want to edit " << endl;
+    cin >> lineNumber;
+    cin.ignore();
+
+    if (lineNumber < 1 || lineNumber > lines.size())
+    {
+        cout << "Line number does not exist" << endl;
+        return;
+    }
+
+    cout << "Enter new content for line " << lineNumber << ":";
+    string newContent;
+    getline(cin, newContent);
+
+    lines[lineNumber - 1] = newContent;
+
+    ofstream outFile("workout0.txt");
+    for (const string &updatedLine : lines)
+    {
+        outFile << updatedLine << endl;
+    }
+
+    cout << "Line " << lineNumber << " has been updated." << endl;
 }
 
 int quit()
