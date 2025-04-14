@@ -30,6 +30,11 @@ void defaultExercises(fstream &exercisesFile)
     exercisesFile << "Bench Press" << endl;
     exercisesFile << "Squat" << endl;
     exercisesFile << "Deadlift" << endl;
+    exercisesFile << "DB Bench Press" << endl;
+    exercisesFile << "Tricep Pulldowns" << endl;
+    exercisesFile << "Lateral Raises" << endl;
+    exercisesFile << "Hamstring Curls" << endl;
+    exercisesFile << "Lat Pulldowns" << endl;
 }
 
 void listExercises()
